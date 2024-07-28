@@ -78,17 +78,18 @@ void Merge()
         if(ptr -> mark == 'f' && next_ptr -> mark == 'f')
         {
             ptr -> size = (ptr -> size)+(next_ptr -> size)+(sizeof(Metadata));
-           
+            
             ptr -> next = next_ptr -> next;
             //merged
         }
+        else
+        {
+            ptr = ptr -> next;
+        }
+        //earlier worked with even no else and this next operation done everytime
         
-        ptr = ptr -> next;
         
     }
-
-    
-
     
     //merging has been completed
 }
@@ -139,7 +140,7 @@ int main()
 {
     Initialize();
 
-    
+    printf("%d",sizeof(Metadata));
     int flag = 0;
     while(flag == 0)
     {
@@ -166,7 +167,7 @@ int main()
                 }
             }
                 
-               
+                
                 
             
             if(n == 2) 
